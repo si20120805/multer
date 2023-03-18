@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Navigate, useNavigate } from "react-router-dom";
 
 const File = () => {
     const [data, setdata] = useState();
     const[simage,setsimage]=useState()
+    const navigate=useNavigate()
 
     const handler = (e) => {
 
@@ -26,6 +28,7 @@ const File = () => {
         const response = await axios.post('http://localhost:5000/api', formdata)
         console.log('image',response.data.image.image)
         setsimage(`http://localhost:5000/images/${response.data.image.image}`)
+        navigate('/grid')
     }
     return (
         <div>

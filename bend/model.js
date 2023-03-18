@@ -8,7 +8,8 @@ const Image=mongoose.Schema({
     {
         type:String
     },
-    name:String
+    Names:String,
+    Age:Number
 
 
 
